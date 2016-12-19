@@ -36,6 +36,7 @@ import cssutils
 from bs4 import BeautifulSoup
 
 from .soupselect import select
+from .soupselect import SelectorNotSupportedException
 
 try:
     from urllib.parse import urljoin
