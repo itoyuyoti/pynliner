@@ -270,7 +270,7 @@ class Pynliner(object):
                             'specificity': selector.specificity,
                             'props': rule.style.getProperties(),
                         })
-                except SelectorNotSupportedException, ex:
+                except SelectorNotSupportedException ex:
                     if self.ignore_unsupported_selectors:
                         pass
                     else:
