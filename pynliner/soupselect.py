@@ -214,7 +214,7 @@ def select(soup, selector):
             elif operator == '~':
                 # for each context in current_context
                 # check 
-                raise NotImplementedError("~ operator is not implemented. Sad face :(")
+                raise SelectorNotSupportedException("~ operator is not implemented. Sad face :(")
             elif operator == '+':
                 # for each context in current_context
                 # check if the preceding sibling satisfies the
