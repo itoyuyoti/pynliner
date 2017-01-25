@@ -65,7 +65,7 @@ class Pynliner(object):
     output = False
 
     def __init__(self, log=None, allow_conditional_comments=False,
-                 preserve_entities=True, ignore_unsupported_selectors=False):
+                 preserve_entities=True, ignore_unsupported_selectors=True):
         self.log = log
         cssutils.log.enabled = False if log is None else True
         self.extra_style_strings = []
