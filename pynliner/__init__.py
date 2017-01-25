@@ -46,7 +46,7 @@ except ImportError:
     from urlparse import urljoin
     from urllib2 import urlopen
 
-__version__ = "0.8.0"
+__version__ = "0.8.0c1"
 
 
 # this pattern may be too aggressive
@@ -270,7 +270,7 @@ class Pynliner(object):
                             'specificity': selector.specificity,
                             'props': rule.style.getProperties(),
                         })
-                except SelectorNotSupportedException ex:
+                except SelectorNotSupportedException as ex:
                     if self.ignore_unsupported_selectors:
                         pass
                     else:
