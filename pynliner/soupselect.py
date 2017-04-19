@@ -50,6 +50,11 @@ def get_attribute_checker(operator, attribute, value=''):
 
 
 def is_white_space(el):
+    # Python3 support - Everything is Unicode now, chaps
+    try:
+        UNICODE_EXISTS = bool(type(unicode))
+    except NameError:
+        unicode = lambda s: str(s)
     if isinstance(el, bs4.NavigableString) and unicode(el).strip() == '':
         return True
     if isinstance(el, bs4.Comment):
@@ -209,7 +214,7 @@ def select(soup, selector):
             elif operator == '~':
                 # for each context in current_context
                 # check 
-                raise NotImplementedError("~ operator is not implemented. Sad face :(")
+                raise SelectorNotSupportedException("~ operator is not implemented. Sad face :(")
             elif operator == '+':
                 # for each context in current_context
                 # check if the preceding sibling satisfies the
