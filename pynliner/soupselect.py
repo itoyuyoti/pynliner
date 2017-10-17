@@ -47,7 +47,7 @@ def get_attribute_checker(operator, attribute, value=''):
 
 
 def is_white_space(el):
-    if isinstance(el, bs4.NavigableString) and str(el).strip() == '':
+    if isinstance(el, bs4.NavigableString) and unicode(el).strip() == '':
         return True
     if isinstance(el, bs4.Comment):
         return True
